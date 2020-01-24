@@ -15,7 +15,7 @@ filename = "heartbeat_disease_model_pkl.sav"
 loaded_model = pickle.load(open(filename, 'rb'))
 
 @app.route('/server', methods = ['POST'])
-def hello_world():
+def hello_world_sever():
     if request.method == 'POST':
         if 'file' not in request.files:
             #flash('No file part')
@@ -26,6 +26,9 @@ def hello_world():
         return "Healthy" + f
     return 'Hello, Flask! for Heart Classification Project Backend'
 
+@app.route('/')
+def hello_world():
+    return 'Hello, Flask! for Heart Classification Project Backend'
 
 if __name__ == '__main__':
     app.run(debug=True)
