@@ -14,6 +14,9 @@ app = Flask(__name__)
 filename = "heartbeat_disease_model_pkl.sav"
 loaded_model = pickle.load(open(filename, 'rb'))
 
+def pAudio():
+    
+
 @app.route('/server', methods = ['POST'])
 def hello_world_sever():
     if request.method == 'POST':
